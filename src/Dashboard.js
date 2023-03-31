@@ -39,7 +39,11 @@ function Dashboard() {
         {/*  <!-- Page Wrapper --> */}
         <div id="wrapper">
           {/*  <!-- Sidebar --> */}
-          <ul className={style} id="accordionSidebar">
+          <ul
+            className={style}
+            id="accordionSidebar"
+            style={{ backgroundColor: "skyblue" }}
+          >
             {/*  <!-- Sidebar - Brand --> */}
             <a
               className="sidebar-brand d-flex align-items-center justify-content-center"
