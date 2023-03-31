@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Fade } from "react-reveal";
 import Cards from "./Cards";
 import "./Dashboard.css";
 import LineChart from "./LineChart";
 import NavBar from "./NavBar";
 import { PieChart } from "./PieChart";
+import { Zoom } from "react-reveal";
 
 function Dashboard() {
   const [style, setStyle] = useState(
@@ -26,7 +28,7 @@ function Dashboard() {
       style == "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
     ) {
       setStyle(
-        "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled1"
+        "navbar-nav bg-gradient-primary sidebar sidebar-dark accordion toggled"
       );
     } else {
       setStyle("navbar-nav bg-gradient-primary sidebar sidebar-dark accordion");
@@ -39,187 +41,192 @@ function Dashboard() {
         {/*  <!-- Page Wrapper --> */}
         <div id="wrapper">
           {/*  <!-- Sidebar --> */}
-          <ul
-            className={style}
-            id="accordionSidebar"
-            style={{ backgroundColor: "skyblue" }}
-          >
-            {/*  <!-- Sidebar - Brand --> */}
-            <a
-              className="sidebar-brand d-flex align-items-center justify-content-center"
-              href="#test"
+          <Fade left duration={"1000"}>
+            <ul
+              className={style}
+              id="accordionSidebar"
+              style={{ backgroundColor: "skyblue" }}
             >
-              <div className="sidebar-brand-text mx-3">Dashboard</div>
-              {/* <div className="text-center d-none d-md-inline">
+              {/*  <!-- Sidebar - Brand --> */}
+              <a
+                className="sidebar-brand d-flex align-items-center justify-content-center"
+                href="#test"
+              >
+                <div className="sidebar-brand-text mx-3">Dashboard</div>
+                {/* <div className="text-center d-none d-md-inline">
                 <button
                   className="rounded-circle border-0"
                   id="sidebarToggle"
                   onClick={changeStyle}
                 ></button>
               </div> */}
-            </a>
-
-            {/*   <!-- Divider --> */}
-            <hr className="sidebar-divider my-0" />
-
-            {/*  <!-- Nav Item - Dashboard --> */}
-            <li className="nav-item active mt-5">
-              <a className="nav-link" href="index.html">
-                <i className="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
               </a>
-            </li>
 
-            {/*  <!-- Divider --> */}
-            <hr className="sidebar-divider" />
+              {/*   <!-- Divider --> */}
+              <hr className="sidebar-divider my-0" />
 
-            {/*   <!-- Heading --> */}
-            <div className="sidebar-heading">Interface</div>
+              {/*  <!-- Nav Item - Dashboard --> */}
+              <li className="nav-item active mt-5">
+                <a className="nav-link" href="index.html">
+                  <i className="fas fa-fw fa-tachometer-alt"></i>
+                  <span>Dashboard</span>
+                </a>
+              </li>
 
-            {/*  <!-- Nav Item - Pages Collapse Menu --> */}
-            <li className="nav-item">
-              <a
-                className="nav-link collapsed"
-                href="#test"
-                data-toggle="collapse"
-                data-target="#testcollapseTwo"
-                aria-expanded="true"
-                aria-controls="collapseTwo"
-              >
-                <i className="fas fa-fw fa-cog"></i>
-                <span>Components</span>
-              </a>
-              <div
-                id="collapseTwo"
-                className="collapse"
-                aria-labelledby="headingTwo"
-                data-parent="#testaccordionSidebar"
-              >
-                <div className="bg-white py-2 collapse-inner rounded">
-                  <h6 className="collapse-header">Custom Components:</h6>
-                  <a className="collapse-item" href="buttons.html">
-                    Buttons
-                  </a>
-                  <a className="collapse-item" href="#a">
-                    Cards
-                  </a>
+              {/*  <!-- Divider --> */}
+              <hr className="sidebar-divider" />
+
+              {/*   <!-- Heading --> */}
+              <div className="sidebar-heading">Interface</div>
+
+              {/*  <!-- Nav Item - Pages Collapse Menu --> */}
+              <li className="nav-item">
+                <a
+                  className="nav-link collapsed"
+                  href="#test"
+                  data-toggle="collapse"
+                  data-target="#testcollapseTwo"
+                  aria-expanded="true"
+                  aria-controls="collapseTwo"
+                >
+                  <i className="fas fa-fw fa-cog"></i>
+                  <span>Components</span>
+                </a>
+                <div
+                  id="collapseTwo"
+                  className="collapse"
+                  aria-labelledby="headingTwo"
+                  data-parent="#testaccordionSidebar"
+                >
+                  <div className="bg-white py-2 collapse-inner rounded">
+                    <h6 className="collapse-header">Custom Components:</h6>
+                    <a className="collapse-item" href="buttons.html">
+                      Buttons
+                    </a>
+                    <a className="collapse-item" href="#a">
+                      Cards
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            {/* <!-- Nav Item - Utilities Collapse Menu --> */}
-            <li className="nav-item">
-              <a
-                className="nav-link collapsed"
-                href="#test"
-                data-toggle="collapse"
-                data-target="#testcollapseUtilities"
-                aria-expanded="true"
-                aria-controls="collapseUtilities"
-              >
-                <i className="fas fa-fw fa-wrench"></i>
-                <span>Utilities</span>
-              </a>
-              <div
-                id="collapseUtilities"
-                className="collapse"
-                aria-labelledby="headingUtilities"
-                data-parent="#testaccordionSidebar"
-              >
-                <div className="bg-white py-2 collapse-inner rounded">
-                  <h6 className="collapse-header">Custom Utilities:</h6>
-                  <a className="collapse-item" href="utilities-color.html">
-                    Colors
-                  </a>
-                  <a className="collapse-item" href="utilities-border.html">
-                    Borders
-                  </a>
-                  <a className="collapse-item" href="utilities-animation.html">
-                    Animations
-                  </a>
-                  <a className="collapse-item" href="utilities-other.html">
-                    Other
-                  </a>
+              {/* <!-- Nav Item - Utilities Collapse Menu --> */}
+              <li className="nav-item">
+                <a
+                  className="nav-link collapsed"
+                  href="#test"
+                  data-toggle="collapse"
+                  data-target="#testcollapseUtilities"
+                  aria-expanded="true"
+                  aria-controls="collapseUtilities"
+                >
+                  <i className="fas fa-fw fa-wrench"></i>
+                  <span>Utilities</span>
+                </a>
+                <div
+                  id="collapseUtilities"
+                  className="collapse"
+                  aria-labelledby="headingUtilities"
+                  data-parent="#testaccordionSidebar"
+                >
+                  <div className="bg-white py-2 collapse-inner rounded">
+                    <h6 className="collapse-header">Custom Utilities:</h6>
+                    <a className="collapse-item" href="utilities-color.html">
+                      Colors
+                    </a>
+                    <a className="collapse-item" href="utilities-border.html">
+                      Borders
+                    </a>
+                    <a
+                      className="collapse-item"
+                      href="utilities-animation.html"
+                    >
+                      Animations
+                    </a>
+                    <a className="collapse-item" href="utilities-other.html">
+                      Other
+                    </a>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            {/*  <!-- Divider --> */}
-            <hr className="sidebar-divider" />
+              {/*  <!-- Divider --> */}
+              <hr className="sidebar-divider" />
 
-            {/* <!-- Heading --> */}
-            <div className="sidebar-heading">Addons</div>
+              {/* <!-- Heading --> */}
+              <div className="sidebar-heading">Addons</div>
 
-            {/*  <!-- Nav Item - Pages Collapse Menu --> */}
-            <li className="nav-item">
-              <a
-                className="nav-link collapsed"
-                href="#test"
-                data-toggle="collapse"
-                data-target="#testcollapsePages"
-                aria-expanded="true"
-                aria-controls="collapsePages"
-              >
-                <i className="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
-              </a>
-              <div
-                id="collapsePages"
-                className="collapse"
-                aria-labelledby="headingPages"
-                data-parent="#testaccordionSidebar"
-              >
-                <div className="bg-white py-2 collapse-inner rounded">
-                  <h6 className="collapse-header">Login Screens:</h6>
-                  <a className="collapse-item" href="login.html">
-                    Login
-                  </a>
-                  <a className="collapse-item" href="register.html">
-                    Register
-                  </a>
-                  <a className="collapse-item" href="forgot-password.html">
-                    Forgot Password
-                  </a>
-                  <div className="collapse-divider"></div>
-                  <h6 className="collapse-header">Other Pages:</h6>
-                  <a className="collapse-item" href="404.html">
-                    404 Page
-                  </a>
-                  <a className="collapse-item" href="blank.html">
-                    Blank Page
-                  </a>
+              {/*  <!-- Nav Item - Pages Collapse Menu --> */}
+              <li className="nav-item">
+                <a
+                  className="nav-link collapsed"
+                  href="#test"
+                  data-toggle="collapse"
+                  data-target="#testcollapsePages"
+                  aria-expanded="true"
+                  aria-controls="collapsePages"
+                >
+                  <i className="fas fa-fw fa-folder"></i>
+                  <span>Pages</span>
+                </a>
+                <div
+                  id="collapsePages"
+                  className="collapse"
+                  aria-labelledby="headingPages"
+                  data-parent="#testaccordionSidebar"
+                >
+                  <div className="bg-white py-2 collapse-inner rounded">
+                    <h6 className="collapse-header">Login Screens:</h6>
+                    <a className="collapse-item" href="login.html">
+                      Login
+                    </a>
+                    <a className="collapse-item" href="register.html">
+                      Register
+                    </a>
+                    <a className="collapse-item" href="forgot-password.html">
+                      Forgot Password
+                    </a>
+                    <div className="collapse-divider"></div>
+                    <h6 className="collapse-header">Other Pages:</h6>
+                    <a className="collapse-item" href="404.html">
+                      404 Page
+                    </a>
+                    <a className="collapse-item" href="blank.html">
+                      Blank Page
+                    </a>
+                  </div>
                 </div>
+              </li>
+
+              {/* <!-- Nav Item - Charts --> */}
+              <li className="nav-item">
+                <a className="nav-link" href="charts.html">
+                  <i className="fas fa-fw fa-chart-area"></i>
+                  <span>Charts</span>
+                </a>
+              </li>
+
+              {/*  <!-- Nav Item - Tables --> */}
+              <li className="nav-item">
+                <a className="nav-link" href="#a">
+                  <i className="fas fa-fw fa-table"></i>
+                  <span>Tables</span>
+                </a>
+              </li>
+
+              {/* <!-- Divider --> */}
+              <hr className="sidebar-divider d-none d-md-block" />
+
+              {/*   <!-- Sidebar Toggler (Sidebar) --> */}
+              <div className="text-center d-none d-md-inline">
+                <button
+                  className="rounded-circle border-0"
+                  id="sidebarToggle"
+                  onClick={changeStyle}
+                ></button>
               </div>
-            </li>
-
-            {/* <!-- Nav Item - Charts --> */}
-            <li className="nav-item">
-              <a className="nav-link" href="charts.html">
-                <i className="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span>
-              </a>
-            </li>
-
-            {/*  <!-- Nav Item - Tables --> */}
-            <li className="nav-item">
-              <a className="nav-link" href="tables.html">
-                <i className="fas fa-fw fa-table"></i>
-                <span>Tables</span>
-              </a>
-            </li>
-
-            {/* <!-- Divider --> */}
-            <hr className="sidebar-divider d-none d-md-block" />
-
-            {/*   <!-- Sidebar Toggler (Sidebar) --> */}
-            <div className="text-center d-none d-md-inline">
-              <button
-                className="rounded-circle border-0"
-                id="sidebarToggle"
-                onClick={changeStyle}
-              ></button>
-            </div>
-          </ul>
+            </ul>
+          </Fade>
           {/*  <!-- End of Sidebar --> */}
 
           {/*  <!-- Content Wrapper --> */}
@@ -449,11 +456,13 @@ function Dashboard() {
                       </div>
                       <div className="card-body">
                         <div className="text-center">
-                          <img
-                            className="img-fluid px-3 px-sm-4 mt-3 mb-4 a6"
-                            src="img/undraw_posting_photo.svg"
-                            alt="..."
-                          />
+                          <Zoom duration={"1200"} delay={200}>
+                            <img
+                              className="img-fluid px-3 px-sm-4 mt-3 mb-4 a6"
+                              src="img/undraw_posting_photo.svg"
+                              alt="..."
+                            />
+                          </Zoom>
                         </div>
                       </div>
                     </div>
